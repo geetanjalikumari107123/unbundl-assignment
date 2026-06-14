@@ -1,0 +1,51 @@
+.call-button {
+  width: 40px;
+  animation: callExpand 5s infinite ease-in-out;
+}
+
+.call-number {
+  opacity: 0;
+  animation: numberVisible 5s infinite ease-in-out;
+}
+
+.phone-icon {
+  animation: phoneShake 1s infinite;
+}
+
+@keyframes callExpand {
+  0%, 35%, 100% {
+    width: 40px;
+  }
+
+  50%, 80% {
+    width: 138px;
+  }
+}
+
+@keyframes numberVisible {
+  0%, 35%, 100% {
+    opacity: 0;
+  }
+
+  50%, 80% {
+    opacity: 1;
+  }
+}
+
+@keyframes phoneShake {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-12deg);
+  }
+
+  50% {
+    transform: rotate(12deg);
+  }
+
+  75% {
+    transform: rotate(-8deg);
+  }
+}
