@@ -2,6 +2,8 @@ import choose1 from "../../assets/images/why-choose/choose1.svg";
 import choose2 from "../../assets/images/why-choose/choose2.svg";
 import choose3 from "../../assets/images/why-choose/choose3.svg";
 import choose4 from "../../assets/images/why-choose/choose4.svg";
+import SectionHeading from "../SectionHeading/SectionHeading";
+import SectionScroller from "../SectionScroller/SectionScroller";
 
 const whyWhistleItems = [
   {
@@ -33,11 +35,9 @@ const whyWhistleItems = [
 export default function WhyWhistleSection() {
   return (
     <section className="bg-white px-5 py-5 md:px-25 md:pb-25">
-      <h2 className="text-center text-[40px] font-bold leading-[130%] text-[#111111]">
-        Why Whistle?
-      </h2>
+      <SectionHeading align="center">Why Whistle?</SectionHeading>
 
-      <div className="no-scrollbar mx-auto mt-8 flex gap-4 overflow-x-auto scroll-smooth pb-4 lg:grid lg:grid-cols-4 lg:overflow-visible lg:pb-0">
+      <SectionScroller>
         {whyWhistleItems.map((item, index) => (
           <article
             key={index}
@@ -60,7 +60,7 @@ export default function WhyWhistleSection() {
             </div>
           </article>
         ))}
-      </div>
+      </SectionScroller>
     </section>
   );
 }

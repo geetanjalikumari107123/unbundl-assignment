@@ -1,14 +1,15 @@
 import { CheckCircle, ArrowRight } from "lucide-react";
 import alignerImage from "../../assets/images/whistle-aligner.svg";
+import SectionHeading from "../SectionHeading/SectionHeading";
 
 export default function DreamSmileSection() {
   return (
     <section className="bg-[#EAF5FB] px-5 py-16 md:px-50 md:py-25">
       <div className="mx-auto grid grid-cols-1 items-center gap-10 md:grid-cols-[1fr_1fr]">
         <div>
-          <h2 className="text-[40px] font-bold leading-[120%] text-[#111111]">
+          <SectionHeading size="tight">
             Dream smiles achieved secretly
-          </h2>
+          </SectionHeading>
 
           <p className="mt-6 max-w-117.5 text-[16px] font-medium leading-[150%] text-[#333333]">
             Experience the superior quality of our Whistle Aligners crafted with

@@ -6,6 +6,8 @@ import overbiteBefore from "../../assets/images/result/overbite-before.svg";
 import overbiteAfter from "../../assets/images/result/overbite-after.svg";
 import protrudingBefore from "../../assets/images/result/protruding-teeth-before.svg";
 import protrudingAfter from "../../assets/images/result/protruding-teeth-after.svg";
+import SectionHeading from "../SectionHeading/SectionHeading";
+import SectionScroller from "../SectionScroller/SectionScroller";
 
 const results = [
   {
@@ -37,19 +39,22 @@ const results = [
 export default function ResultsSection() {
   return (
     <section className="bg-white px-5 py-5 md:px-25 md:py-20">
-      <h2 className="text-center text-[40px] font-bold leading-[130%] text-gray-900">
-        Results You’ll Love
-      </h2>
+      <SectionHeading align="center" color="gray">
+        Results You&apos;ll Love
+      </SectionHeading>
 
-      <div className="no-scrollbar mx-auto mt-8 flex gap-5 overflow-x-auto scroll-smooth px-1 pb-4 lg:grid lg:grid-cols-4 lg:overflow-visible lg:px-0 lg:pb-0">
+      <SectionScroller gap="gap-5" className="px-1 lg:px-0">
         {results.map((result, index) => (
-          <div key={index} className="min-w-65 shrink-0 overflow-hidden bg-[#EEF9FF] p-2 rounded-md lg:min-w-0 lg:shrink">
+          <div
+            key={index}
+            className="min-w-65 shrink-0 overflow-hidden rounded-md bg-[#EEF9FF] p-2 lg:min-w-0 lg:shrink"
+          >
             <div className="grid grid-cols-2 gap-1">
               <div>
                 <img
                   src={result.before}
                   alt={`${result.concern} before`}
-                  className="h-33.75 w-full object-cover rounded-md"
+                  className="h-33.75 w-full rounded-md object-cover"
                 />
                 <p className="py-2 text-center text-[14px] font-medium text-gray-700">
                   Before
@@ -60,7 +65,7 @@ export default function ResultsSection() {
                 <img
                   src={result.after}
                   alt={`${result.concern} after`}
-                  className="h-33.75 w-full object-cover rounded-md"
+                  className="h-33.75 w-full rounded-md object-cover"
                 />
                 <p className="py-2 text-center text-[14px] font-medium text-gray-700">
                   After
@@ -81,7 +86,7 @@ export default function ResultsSection() {
             </div>
           </div>
         ))}
-      </div>
+      </SectionScroller>
     </section>
   );
 }

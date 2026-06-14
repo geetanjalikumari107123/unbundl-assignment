@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Check, ChevronDown, ChevronUp, X } from "lucide-react";
 import Logo from "../../assets/images/logo.svg";
+import SectionHeading from "../SectionHeading/SectionHeading";
 
 const comparisonData = [
   {
@@ -52,9 +53,7 @@ export default function ComparisonSection() {
 
   return (
     <section className="bg-white px-5 py-25">
-      <h2 className="text-center text-[40px] font-bold leading-[130%] text-[#111111]">
-        What sets Whistle apart?
-      </h2>
+      <SectionHeading align="center">What sets Whistle apart?</SectionHeading>
 
       <div className="mx-auto mt-12.5 max-w-210 overflow-hidden rounded-2xl border border-[#D9D9D9]">
         <div className="grid grid-cols-[1.7fr_0.8fr_0.9fr]">

@@ -5,7 +5,7 @@ interface ButtonProps {
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
   className?: string;
-  buttonHeight: string
+  buttonHeight: string;
 }
 
 export default function Button({

@@ -1,5 +1,6 @@
 import { Play } from "lucide-react";
 import stepVideoImage from "../../assets/images/perfect-smile.svg";
+import SectionHeading from "../SectionHeading/SectionHeading";
 
 const steps = [
   {
@@ -35,9 +36,9 @@ export default function PerfectSmileSteps() {
         <div className="grid gap-10 lg:grid-cols-[7fr_5fr]">
           {/* Left */}
           <div className="order-2 lg:order-1">
-            <h2 className="text-[32px] font-bold leading-[130%] text-[#111111] md:text-[48px]">
+            <SectionHeading size="steps">
               Get your perfect smile in four simple steps
-            </h2>
+            </SectionHeading>
 
             <div className="relative mt-10 lg:mt-12">
               

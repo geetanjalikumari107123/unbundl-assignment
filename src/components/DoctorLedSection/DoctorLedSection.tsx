@@ -1,5 +1,6 @@
 import doctorImage from "../../assets/images/direct-to-customers.svg";
 import Button from "../Button/Button";
+import SectionHeading from "../SectionHeading/SectionHeading";
 
 export default function DoctorLedSection() {
   return (
@@ -17,9 +18,9 @@ export default function DoctorLedSection() {
         {/* Content */}
         <div className="order-2 flex items-center px-5 py-10 md:px-12 lg:order-1 lg:px-25 lg:py-30">
           <div className="max-w-130">
-            <h2 className="text-[28px] font-bold leading-[130%] text-[#111111] md:text-[40px]">
+            <SectionHeading size="responsive">
               We are Doctor-led, not direct-to-customers
-            </h2>
+            </SectionHeading>
 
             <p className="mt-6 text-[16px] font-medium leading-[150%] text-[#333333]">
               We don't offer direct-to-customer invisible aligners. We treat you

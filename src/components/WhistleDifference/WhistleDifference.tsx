@@ -2,6 +2,7 @@ import differenceImage from "../../assets/images/whistle-difference.svg";
 import DifferenceIcon1 from "../../assets/images/difference-icon/1.svg";
 import DifferenceIcon2 from "../../assets/images/difference-icon/2.svg";
 import DifferenceIcon3 from "../../assets/images/difference-icon/3.svg";
+import SectionHeading from "../SectionHeading/SectionHeading";
 
 const features = [
   {
@@ -29,9 +30,7 @@ export default function WhistleDifference() {
     <section className="bg-[#EAF5FB] px-5 py-16 md:px-50 md:py-20">
       <div className="mx-auto grid items-center gap-6 lg:grid-cols-[2fr_1fr]">
         <div className="rounded-2xl bg-white px-8 py-10 md:px-12">
-          <h2 className="text-[40px] font-bold leading-[130%] text-[#111111]">
-            The Whistle Difference
-          </h2>
+          <SectionHeading>The Whistle Difference</SectionHeading>
 
           <div className="mt-10 space-y-10">
             {features.map((feature) => (

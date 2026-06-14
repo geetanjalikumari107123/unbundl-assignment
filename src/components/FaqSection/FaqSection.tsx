@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import { useFaqPosts } from "../../hooks/useFaqPosts";
+import SectionHeading from "../SectionHeading/SectionHeading";
 
 const faqs = [
   {
@@ -31,22 +33,30 @@ const faqs = [
 
 export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const { posts, isLoading, error } = useFaqPosts();
+
+  const dynamicFaqs = posts.map((post) => ({
+    question: post.title,
+    answer: post.body,
+  }));
+
+  const faqItems = [...faqs, ...dynamicFaqs];
 
   return (
     <section className="bg-white px-5 py-20 md:px-25 md:py-25">
-      <h2 className="text-center text-[40px] font-bold leading-[130%] text-gray-900 md:text-[40px]">
-        <span className="text-[#8D62D9]">Got Questions?</span> We’ve got answers
-      </h2>
+      <SectionHeading align="center" color="gray">
+        <span className="text-[#8D62D9]">Got Questions?</span> We&apos;ve got answers
+      </SectionHeading>
 
       <div className="mx-auto mt-12">
-        {faqs.map((faq, index) => {
+        {faqItems.map((faq, index) => {
           const isOpen = openIndex === index;
 
           return (
             <div
               key={faq.question}
               className={`${
-                index !== faqs.length - 1 ? "border-b border-[#D9D9D9]" : ""
+                index !== faqItems.length - 1 ? "border-b border-[#D9D9D9]" : ""
               }`}
             >
               <button
@@ -72,6 +82,18 @@ export default function FaqSection() {
             </div>
           );
         })}
+
+        {isLoading && (
+          <div className="border-t border-[#D9D9D9] py-6 text-[16px] font-medium text-[#444444]">
+            Loading latest questions...
+          </div>
+        )}
+
+        {error && (
+          <div className="border-t border-[#D9D9D9] py-6 text-[16px] font-medium text-[#8D62D9]">
+            {error}
+          </div>
+        )}
       </div>
     </section>
   );
