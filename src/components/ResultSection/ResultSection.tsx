@@ -38,7 +38,7 @@ const results = [
 
 export default function ResultsSection() {
   return (
-    <section className="bg-white px-5 py-5 md:px-25 md:py-20">
+    <section className="bg-white px-5 py-5 md:px-25 md:py-25">
       <SectionHeading align="center" color="gray">
         Results You&apos;ll Love
       </SectionHeading>

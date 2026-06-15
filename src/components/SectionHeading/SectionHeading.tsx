@@ -37,7 +37,7 @@ export default function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <h2
-      className={`${alignClasses[align]} ${sizeClasses[size]} font-bold ${colorClasses[color]} ${className}`.trim()}
+      className={`${alignClasses[align]} ${sizeClasses[size]} font-extrabold ${colorClasses[color]} ${className}`.trim()}
     >
       {children}
     </h2>

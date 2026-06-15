@@ -42,7 +42,7 @@ export default function WhistleDifference() {
                 />
 
                 <div>
-                  <h3 className="text-[20px] font-semibold leading-[130%] text-[#333333]">
+                  <h3 className="text-[20px] font-bold leading-[130%] text-[#333333]">
                     {feature.title}
                   </h3>
 

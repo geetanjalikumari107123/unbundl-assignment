@@ -18,10 +18,10 @@ export default function ClinicCard() {
   };
 
   return (
-    <section className="bg-white px-5 py-10 md:px-50 md:py-16">
-      <div className="mx-auto rounded-3xl bg-[#EAF5FB] px-8 py-8 md:px-16 md:py-10">
+    <section className="bg-white px-5 py-10 md:px-25 md:py-16">
+      <div className="mx-auto rounded-3xl bg-[#EAF5FB] px-8 py-8 md:px-25 md:py-10">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          <h3 className="max-w-195 text-[28px] font-semibold leading-[150%] text-[#111111] md:text-[28px]">
+          <h3 className="max-w-208 text-[28px] font-semibold leading-[150%] text-[#111111] md:text-[28px]">
             Book a Free 3D Teeth Scan and Orthodontist Consult in a Clove Dental
             Clinic near you.
           </h3>
