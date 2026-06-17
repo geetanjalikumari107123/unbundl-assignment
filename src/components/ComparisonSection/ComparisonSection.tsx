@@ -3,7 +3,16 @@ import { Check, ChevronDown, ChevronUp, X } from "lucide-react";
 import Logo from "../../assets/images/logo.svg";
 import SectionHeading from "../SectionHeading/SectionHeading";
 
-const comparisonData = [
+type ComparisonItem = {
+  title: string;
+  whistle?: string;
+  otherBrands?: string;
+  whistleAvailable?: boolean;
+  otherAvailable?: boolean;
+  description: string;
+};
+
+const comparisonData: ComparisonItem[] = [
   {
     title: "Easy to complex cases",
     whistle: "Yes, mild to complex",
@@ -51,19 +60,47 @@ const comparisonData = [
 export default function ComparisonSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  const renderValue = (
+    text?: string,
+    available?: boolean,
+    iconType?: "check" | "cross",
+  ) => {
+    if (text) return text;
+
+    if (available === true && iconType === "check") {
+      return (
+        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#00A86B] text-white">
+          <Check size={17} strokeWidth={3} />
+        </span>
+      );
+    }
+
+    if (available === false && iconType === "cross") {
+      return (
+        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#E0212D] text-white">
+          <X size={17} strokeWidth={3} />
+        </span>
+      );
+    }
+
+    return null;
+  };
+
   return (
-    <section className="bg-white px-5 py-25">
+    <section className="bg-white px-5 py-16 md:py-25">
       <SectionHeading align="center">What sets Whistle apart?</SectionHeading>
 
-      <div className="mx-auto mt-12.5 max-w-210 overflow-hidden rounded-2xl border border-[#D9D9D9]">
-        <div className="grid grid-cols-[1.7fr_0.8fr_0.9fr]">
-          <div className="px-6 py-5 text-[18px] font-semibold">Features</div>
-
-          <div className="bg-[#EAF5FB] px-4 py-4 flex justify-center">
-            <img src={Logo} alt="Logo" className="w-27" />
+      <div className="mx-auto mt-10 max-w-210 overflow-hidden rounded-2xl border border-[#D9D9D9] md:mt-12.5">
+        <div className="grid grid-cols-[44%_28%_28%]">
+          <div className="flex items-center px-4 py-5 font-semibold text-black md:px-6 md:text-[18px]">
+            Features
           </div>
 
-          <div className="px-4 py-5 text-center text-[18px] font-bold">
+          <div className="flex items-center justify-center bg-[#EAF5FB] px-2 py-4">
+            <img src={Logo} alt="Whistle logo" className="w-20 md:w-27" />
+          </div>
+
+          <div className="flex items-center justify-center px-2 py-5 text-center font-bold text-black md:text-[18px]">
             Other Brands
           </div>
         </div>
@@ -73,40 +110,36 @@ export default function ComparisonSection() {
 
           return (
             <div key={item.title}>
-              <div className="grid min-h-18 grid-cols-[1.7fr_0.8fr_0.9fr]">
+              <div className="grid min-h-20 grid-cols-[44%_28%_28%] md:min-h-18">
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="flex items-center justify-between px-6 text-left text-[16px] font-medium text-[#111111]"
+                  className="flex items-center justify-between gap-2 px-4 py-4 text-left text-[15px] font-medium leading-[140%] text-[#111111] md:px-6 md:text-[16px]"
+                  aria-expanded={isOpen}
                 >
-                  {item.title}
-                  {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                  <span>{item.title}</span>
+
+                  <span className="shrink-0">
+                    {isOpen ? (
+                      <ChevronUp size={18} />
+                    ) : (
+                      <ChevronDown size={18} />
+                    )}
+                  </span>
                 </button>
 
-                <div className="flex items-center justify-center bg-[#EAF5FB] px-4 text-center text-[16px] font-medium">
-                  {"whistle" in item && item.whistle ? (
-                    item.whistle
-                  ) : item.whistleAvailable ? (
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#00A86B] text-white">
-                      <Check size={16} />
-                    </span>
-                  ) : null}
+                <div className="flex items-center justify-center bg-[#EAF5FB] px-2 py-4 text-center text-[15px] font-medium leading-[140%] text-black md:px-4 md:text-[16px]">
+                  {renderValue(item.whistle, item.whistleAvailable, "check")}
                 </div>
 
-                <div className="flex items-center justify-center px-4 text-center text-[16px] font-medium">
-                  {"otherBrands" in item && item.otherBrands ? (
-                    item.otherBrands
-                  ) : item.otherAvailable === false ? (
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#E0212D] text-white">
-                      <X size={16} />
-                    </span>
-                  ) : null}
+                <div className="flex items-center justify-center px-2 py-4 text-center text-[15px] font-medium leading-[140%] text-black md:px-4 md:text-[16px]">
+                  {renderValue(item.otherBrands, item.otherAvailable, "cross")}
                 </div>
               </div>
 
               {isOpen && (
-                <div className="bg-[#EAF5FB] px-8 py-6">
-                  <p className="text-[18px] font-medium leading-[150%] text-[#3D3D3D]">
+                <div className="bg-[#EAF5FB] px-5 py-5 md:px-8 md:py-6">
+                  <p className="text-[15px] font-medium leading-[150%] text-[#3D3D3D] md:text-[18px]">
                     {item.description}
                   </p>
                 </div>
