@@ -45,7 +45,7 @@ export default function FaqSection() {
   return (
     <section className="bg-white px-5 py-20 md:px-25 md:py-25">
       <SectionHeading align="center" color="gray">
-        <span className="text-[#8D62D9]">Got Questions?</span> We&apos;ve got answers
+        <span className="text-[#8D62D9]">Got Questions?</span> We've got answers
       </SectionHeading>
 
       <div className="mx-auto mt-12">

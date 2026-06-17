@@ -12,19 +12,18 @@ type FaqPostState = {
   error: string | null;
 };
 
-const FAQ_POSTS_URL = "https://jsonplaceholder.typicode.com/posts?_limit=3";
+const FAQ_POSTS_URL = "https://jsonplaceholder.typicode.com/posts?_limit=3"; 
 const REQUEST_TIMEOUT_MS = 8000;
-
 const toFaqQuestion = (title: string) =>
   title
     .split(" ")
     .slice(0, 6)
     .join(" ")
-    .replace(/^\w/, (letter) => letter.toUpperCase());
+    .replace(/^\w/, (letter) => letter.toUpperCase()); 
 
 export function useFaqPosts() {
   const [state, setState] = useState<FaqPostState>({
-    posts: [],
+    posts: [], 
     isLoading: true,
     error: null,
   });

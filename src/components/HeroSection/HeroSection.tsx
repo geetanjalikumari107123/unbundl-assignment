@@ -2,7 +2,7 @@ import heroImage from "../../assets/images/hero.svg";
 
 export default function HeroSection() {
   return (
-    <section className="grid min-h-70 grid-cols-[1.5fr_1fr] items-center overflow-hidden bg-[#F6F3FC] pt-5 md:px-50">
+    <section className="grid grid-cols-[1.5fr_1fr] items-center overflow-hidden bg-[#F6F3FC] pt-5 md:px-50">
       <div className="mx-auto px-6 md:mx-0 md:text-left">
         <h1 className="text-[24px] font-bold leading-[130%] text-[#1f2937] sm:text-[32px] md:text-[40px]">
           Invisible Aligners for a dream smile
