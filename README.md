@@ -1,30 +1,88 @@
-# Unbundl Frontend Assessment
+# Whistle Smile
 
-React + TypeScript + Vite implementation of the Whistle page sections from the Unbundl frontend assessment. The UI is built with Tailwind CSS utility classes and keeps the supplied visual direction, responsive horizontal card sections, accordion behavior, and sticky call-to-action footer.
+A modern, responsive dental care landing page built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**. The application focuses on clean component architecture, responsive layouts, reusable UI components, and dynamic content rendering through API integration.
 
-## Setup
+## Features
+
+- Responsive, mobile-first design
+- Reusable React components
+- Dynamic FAQ section with API integration
+- Interactive accordion component
+- Optimized form components
+- Clean and scalable project structure
+- Built with TypeScript for type safety
+- Tailwind CSS for rapid and maintainable styling
+
+## Tech Stack
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+
+## Getting Started
+
+### Install dependencies
 
 ```bash
 npm install
+```
+
+### Start the development server
+
+```bash
 npm run dev
 ```
 
-For a production check:
+### Build for production
 
 ```bash
 npm run build
 ```
 
-## API Used
+## Project Structure
 
-The FAQ section fetches additional questions from JSONPlaceholder:
+```
+src/
+├── components/
+├── hooks/
+├── assets/
+├── pages/
+├── data/
+└── App.tsx
+```
 
-```text
+## API Integration
+
+The FAQ section retrieves dynamic content from the JSONPlaceholder API.
+
+```
 https://jsonplaceholder.typicode.com/posts?_limit=3
 ```
 
-The data is loaded with `useEffect` and `useState` through `src/hooks/useFaqPosts.ts`. The section shows a loading message while the request is in progress and a friendly error message if the request fails.
+The data is fetched using a custom React hook with loading, error handling, and response transformation to provide a smooth user experience.
 
-## Approach
+## Highlights
 
-I kept the current Whistle visual layout intact and organized the page into reusable functional components. Static Figma-style content stays close to each section, while API loading logic lives in a dedicated hook so the UI component remains readable. Existing interactions such as the FAQ accordion and form controls are preserved, with responsive Tailwind classes used throughout instead of switching to separate CSS files.
+- Component-based architecture
+- Responsive UI following modern frontend best practices
+- Custom React Hooks
+- API Integration using Fetch API
+- Loading and error state handling
+- Accessible and reusable UI components
+- Type-safe development with TypeScript
+- Optimized for maintainability and scalability
+
+## Future Improvements
+
+- Form validation with React Hook Form
+- Dark mode support
+- Unit testing with React Testing Library and Vitest
+- Backend integration for lead management
+- Enhanced animations and accessibility improvements
+
+## Author
+
+**Geetanjali Kumari**
+
+Frontend Developer
